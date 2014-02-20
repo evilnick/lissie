@@ -1,0 +1,12 @@
+#lissie config file
+outformat     = 'html5'
+css_dir       = './includes/css'
+js_dir        = './includes/js'
+templates_dir = './includes/templates'
+output_dir    = './build/'
+media_dir     = './media/'
+[extensions]
+  [[meta]]
+  [[codehighlight]] 
+      linenums=false      #options to extensions go after them
+

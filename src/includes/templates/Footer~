@@ -1,0 +1,10 @@
+	<footer>
+<p>&copy; 2014 Canonical Ltd. Ubuntu and Canonical are registered trademarks of <a href="http://canonical.com">Canonical Ltd</a>.</p>
+	</footer>
+<!--Scripts-->
+    <script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/core.js"></script>
+    <script src="//assets.ubuntu.com/sites/ubuntu/latest/u/js/global.js"></script>
+
+<!--End-Scripts-->
+
+</body></html>
