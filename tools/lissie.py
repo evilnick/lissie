@@ -115,22 +115,22 @@ class Page:
         
     def process(self):
         sourcedir= self.args.source[0]
-        self.output= self.parser.convert(self.content)
+        content= self.parser.convert(self.content)
         #extract metadata
         title=' - '.join([self.config['sitename'],self.parser.Meta['title'][0]])
-        #load templates
-        h=open(os.path.join(sourcedir,os.path.join(self.config['templates_dir'],'Header')))
-        header = h.read()
-        f=open(os.path.join(sourcedir,os.path.join(self.config['templates_dir'],'Footer')))
-        footer=f.read()
-        #replace variables
-        header = re.sub('%%TITLE%%', title, header)
-        header = re.sub('%%CSS%%', '.'+self.config['css_dir'], header)
-        header = re.sub('%%JS%%', '.'+self.config['js_dir'], header)
-        footer = re.sub('%%JS%%', '.'+self.config['js_dir'], footer)
-        
-        #inject templates
-        self.output='\n'.join([header,self.output,footer])
+        #load template
+        t=open(os.path.join(sourcedir,os.path.join(self.config['templates_dir'],'Template')))
+        self.output = t.read()
+        #replace tokens
+        replace= [ ('%%TITLE%%', title),                       \
+                   ('%%CSS%%', '.'+self.config['css_dir']),    \
+                   ('%%JS%%', '.'+self.config['js_dir']),      \
+                   ('%%CONTENT%%', content)     \
+                 ]
+        for pair in replace:
+            self.output = re.sub(pair[0], pair[1], self.output)
+            
+        #reset the parser for next use
         self.parser.reset()
         
     def write(self,filepath):

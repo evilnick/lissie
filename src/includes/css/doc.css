@@ -1,3 +1,213 @@
+/*
+	Variable Grid System.
+	Learn more ~ http://www.spry-soft.com/grids/
+	Based on 960 Grid System - http://960.gs/
+
+	Licensed under GPL and MIT.
+*/
+
+/*
+  Forces backgrounds to span full width,
+  even if there is horizontal scrolling.
+  Increase this if your layout is wider.
+
+  Note: IE6 works fine without this fix.
+*/
+
+body {
+  min-width: 1020px;
+}
+
+/* Containers
+----------------------------------------------------------------------------------------------------*/
+.container_4 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1020px;
+}
+
+/* Grid >> Global
+----------------------------------------------------------------------------------------------------*/
+
+
+.grid_1,
+.grid_2,
+.grid_3,
+.grid_4 {
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 8px;
+	margin-right: 7px;
+}
+
+
+
+.push_1, .pull_1,
+.push_2, .pull_2,
+.push_3, .pull_3,
+.push_4, .pull_4 {
+	position:relative;
+}
+
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last)
+----------------------------------------------------------------------------------------------------*/
+
+.alpha {
+	margin-left: 0;
+}
+
+.omega {
+	margin-right: 0;
+}
+
+/* Grid >> 4 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_4 .grid_1 {
+	width:240px;
+}
+
+.container_4 .grid_2 {
+	width:495px;
+}
+
+.container_4 .grid_3 {
+	width:750px;
+}
+
+.container_4 .grid_4 {
+	width:1005px;
+}
+
+
+
+
+/* Prefix Extra Space >> 4 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_4 .prefix_1 {
+	padding-left:255px;
+}
+
+.container_4 .prefix_2 {
+	padding-left:510px;
+}
+
+.container_4 .prefix_3 {
+	padding-left:765px;
+}
+
+
+
+/* Suffix Extra Space >> 4 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_4 .suffix_1 {
+	padding-right:255px;
+}
+
+.container_4 .suffix_2 {
+	padding-right:510px;
+}
+
+.container_4 .suffix_3 {
+	padding-right:765px;
+}
+
+
+
+/* Push Space >> 4 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_4 .push_1 {
+	left:255px;
+}
+
+.container_4 .push_2 {
+	left:510px;
+}
+
+.container_4 .push_3 {
+	left:765px;
+}
+
+
+
+/* Pull Space >> 4 Columns
+----------------------------------------------------------------------------------------------------*/
+
+
+.container_4 .pull_1 {
+	left:-255px;
+}
+
+.container_4 .pull_2 {
+	left:-510px;
+}
+
+.container_4 .pull_3 {
+	left:-765px;
+}
+
+
+
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+
+/* http://sonspring.com/journal/clearing-floats */
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+/* http://www.yuiblog.com/blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified */
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/*
+  The following zoom:1 rule is specifically for IE6 + IE7.
+  Move to separate stylesheet if invalid CSS is a problem.
+*/
+
+.clearfix {
+  zoom: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 h1,h2,h3,h4,h5,h6{margin:0;font-family:inherit;font-weight:bold;color:inherit;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;color:#999999;}
 h1{font-size:30px;line-height:36px;}h1 small{font-size:18px;}
 h2{font-size:24px;line-height:36px;}h2 small{font-size:18px;}
@@ -11,8 +221,57 @@ audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 html{font-family:ubuntu;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-body{margin:0}
+
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
 
+
+.doc-content img { 
+  padding:0px;
+  -moz-box-shadow: 0 0 6px #000000;
+  -webkit-box-shadow: 0 0 6px #000000;
+  box-shadow: 0 0 6px #000000; 
+  margin-bottom: 10px;
+}
+
+.doc-content img.right{
+  float: right;
+  display: block;
+  vertical-align:middle;
+}
+
+.doc-content img.left{
+  float: left;
+  display: block;
+  vertical-align:middle;
+}
+.doc-content img.noshadow { 
+  padding:0px;
+  margin: 10 10 10px;
+  -moz-box-shadow: 0 0 0px #000000;
+  -webkit-box-shadow: 0 0 0px #000000;
+  box-shadow: 0 0 0px #000000; 
+}
+.doc-content ul, .doc-content ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.doc-content ul > li {
+  list-style: circle;
+}
+
+.doc-content ol > li {
+  list-style: decimal;
+}
+
+.doc-content h1:not(:first) {
+  margin-top: 40px;
+}
+
+.doc-content h3{
+  font-size: 20px;
+  color: #5E2750;
+  font-weight: 800;
+}
