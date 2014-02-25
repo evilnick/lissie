@@ -15,4 +15,5 @@ test: $(SOURCE_DIR)/test.md
 	python -m SimpleHTTPServer 
 
 clean:
-	rm -rf build
+	@rm -rf build
+	@find . -iname "*~" -exec rm '{}' ';'

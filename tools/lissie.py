@@ -58,16 +58,19 @@ def main():
     if args.debug :
         print 'Using config:'
         print config
+        print 'extensions loaded:'
+        print config['extensions'].keys()
     #check for metadata key
     if 'meta' in config['extensions'] :
         metaparse=True
     else:
         print "***WARNING: Meta extension not used, any metadata in source files will \
               be processed into the output ***"
+    
     # create markdown parser from config. This will be  reset and reused for each page
     ext_configs = {'meta': []}
     
-    mdparser = markdown.Markdown(output_format=config['outformat'], extensions=['meta'])
+    mdparser = markdown.Markdown(output_format=config['outformat'], extensions=config['extensions'])
     # make outdir
     outdir=os.path.abspath(config['output_dir'])
     if not os.path.exists(outdir):
@@ -121,6 +124,7 @@ class Page:
         #load template
         t=open(os.path.join(sourcedir,os.path.join(self.config['templates_dir'],'Template')))
         self.output = t.read()
+        
         #replace tokens
         replace= [ ('%%TITLE%%', title),                       \
                    ('%%CSS%%', '.'+self.config['css_dir']),    \
