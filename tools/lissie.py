@@ -44,10 +44,12 @@ def getargs():
     return (parser.parse_args())  
 
 def read_config(configfile):
-    #TODO check if file exists   
-    config=ConfigObj(configfile)
-    return(config)
-
+    if os.path.isfile(configfile):  
+        config=ConfigObj(configfile)
+        return(config)
+    else:
+        print "No valid config file given, and default config file not found"
+        sys.exit(1)
     
 def main():
     
