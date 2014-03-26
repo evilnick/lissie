@@ -70,7 +70,7 @@ def main():
               be processed into the output ***"
     
     # create markdown parser from config. This will be  reset and reused for each page
-    ext_configs = {'meta': []}
+   
     
     mdparser = markdown.Markdown(output_format=config['outformat'], extensions=config['extensions'])
     # make outdir
