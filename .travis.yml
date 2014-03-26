@@ -6,6 +6,7 @@ python:
 # command to install dependencies
 install:
   - "pip install markdown"
+  - "pip install configobj"
 
 # command to run tests
 script: python tools/lissie.py --source=./src --config=./tools/default.cfg --debug
